@@ -2,68 +2,75 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="relative flex min-h-dvh flex-col overflow-hidden text-foreground">
+      <Image
+        src="/bg.jpg"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="animate-slow-zoom object-cover"
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(8,12,20,0.78) 0%, rgba(8,12,20,0.68) 45%, rgba(8,12,20,0.82) 100%)",
+        }}
+      />
+
+      <div className="relative z-10 flex min-h-dvh flex-col items-center px-6 py-10 sm:px-8 sm:py-12">
+        <header className="animate-fade-in flex w-full justify-center pt-2 sm:pt-4">
+          <Image
+            src="/logo-white.png"
+            alt="Eastbound"
+            width={220}
+            height={48}
+            priority
+            className="h-auto w-[160px] sm:w-[200px]"
+          />
+        </header>
+
+        <section className="flex flex-1 flex-col items-center justify-center text-center">
+          <p
+            className="animate-fade-up text-[11px] font-medium uppercase tracking-[0.28em] text-foreground sm:text-xs"
+            style={{ animationDelay: "120ms" }}
+          >
+            Eastbound Group
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+          <div
+            aria-hidden
+            className="animate-draw-line mt-5 h-px w-10 bg-accent sm:mt-6"
+            style={{ animationDelay: "320ms" }}
+          />
+
+          <h1
+            className="animate-fade-up mt-7 font-serif text-[2.75rem] font-normal leading-none tracking-tight text-foreground sm:mt-8 sm:text-6xl md:text-7xl"
+            style={{ animationDelay: "280ms" }}
           >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            Arriving soon
+          </h1>
+
+          <p
+            className="animate-fade-up mt-6 max-w-[34rem] text-base font-light leading-relaxed text-muted sm:mt-7 sm:text-lg"
+            style={{ animationDelay: "440ms" }}
           >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+            From luxury FITs and incentive travel to photography, culinary tours
+            and educational trips, Eastbound designs classic, seamless and
+            signature travel experiences across India, Nepal, Bhutan, Sri Lanka
+            and the UAE for tour operators, travel agents, wholesalers globally.
+          </p>
+        </section>
+
+        <footer
+          className="animate-fade-in pb-2 text-center text-[10px] font-medium uppercase tracking-[0.22em] text-muted sm:pb-4 sm:text-[11px]"
+          style={{ animationDelay: "700ms" }}
+        >
+          Eastbound · Timeless Expeditions Across Five Countries
+        </footer>
+      </div>
+    </main>
   );
 }
